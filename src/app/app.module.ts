@@ -7,6 +7,7 @@ import { TransactionListComponent } from './components/transaction-list/transact
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddTransactionComponent } from './components/add-transaction/add-transaction.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddTransactionComponent } from './components/add-transaction/add-transa
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

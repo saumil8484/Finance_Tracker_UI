@@ -1,5 +1,17 @@
 <div class="container my-5">
     <h1 class="mb-3">Transactions</h1>
+    <div style="float: left;">
+        <label class="form-label" for="account_number">Sort:</label>&nbsp;
+        <select data-mdb-select-init id="account_number" (change)="onChangeAcc($event)">
+            <option [value]=0 selected hidden>Account Number</option>
+            <option *ngFor="let acct of acct_number" [value]="acct.account_number">&nbsp;...{{ acct.account_number }}&nbsp;</option>
+        </select>&nbsp;
+        <button type="button" class="btn btn-warning btn-sm mr-5" (click)="ClearSearch()">Clear</button>
+    </div>
+    <div style="float: right;">
+        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-sm mb-1" (click)="onAdd()">Add Transaction</button>
+    </div>
+
 
     <table class="table" *ngIf="transactions && transactions.length > 0" style="text-align: center;">
         <thead>
@@ -11,20 +23,51 @@
                 <th>Credit</th>
                 <th>Debit</th>
                 <th>Category</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let transaction of transactions" style="text-align: center;">
-                <td>{{ transaction.account_number }}</td>
-                <td>{{ transaction.transaction_id }}</td>
-                <td>{{ transaction.date }}</td>
-                <td *ngIf="transaction.credit != 0" style="color: green;">{{ transaction.description }}</td>
-                <td *ngIf="transaction.debit != 0" style="color: red;">{{ transaction.description }}</td>
-                <td *ngIf="transaction.credit != 0">${{ transaction.credit }}</td>
-                <td *ngIf="transaction.credit == 0">-</td>
-                <td *ngIf="transaction.debit != 0">${{ transaction.debit }}</td>
-                <td *ngIf="transaction.debit == 0">-</td>
-                <td>{{ transaction.category }}</td>
+                <ng-container *ngIf="selectedAcc == 0">
+                    <td>...{{ transaction.account_number }}</td>
+                    <td>{{ transaction.id }}</td>
+                    <td>{{ transaction.date }}</td>
+                    <td *ngIf="transaction.credit != 0" style="color: green;">{{ transaction.description }}</td>
+                    <td *ngIf="transaction.debit != 0" style="color: red;">{{ transaction.description }}</td>
+                    <td *ngIf="transaction.credit != 0">${{ transaction.credit }}</td>
+                    <td *ngIf="transaction.credit == 0"></td>
+                    <td *ngIf="transaction.debit != 0">-${{ transaction.debit }}</td>
+                    <td *ngIf="transaction.debit == 0"></td>
+                    <td>{{ transaction.category }}</td>
+                    <td>
+                        <button type="button"><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button type="button"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </ng-container>
+                <ng-container *ngIf="selectedAcc">
+                    <ng-container *ngIf="transaction.account_number == selectedAcc">
+                        <td>...{{ transaction.account_number }}</td>
+                        <td>{{ transaction.id }}</td>
+                        <td>{{ transaction.date }}</td>
+                        <td *ngIf="transaction.credit != 0" style="color: green;">{{ transaction.description }}</td>
+                        <td *ngIf="transaction.debit != 0" style="color: red;">{{ transaction.description }}</td>
+                        <td *ngIf="transaction.credit != 0">${{ transaction.credit }}</td>
+                        <td *ngIf="transaction.credit == 0"></td>
+                        <td *ngIf="transaction.debit != 0">-${{ transaction.debit }}</td>
+                        <td *ngIf="transaction.debit == 0"></td>
+                        <td>{{ transaction.category }}</td>
+                    </ng-container>
+                </ng-container>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Total :</th>
+                <th>$20000</th>
+                <th>- $1000</th>
+                <th>=&nbsp;&nbsp;&nbsp;</th>
+                <th>$19000</th>
             </tr>
         </tbody>
     </table>

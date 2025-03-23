@@ -1,40 +1,72 @@
 {
   "data": [
     {
-      "account_number": 12345678,
+      "id": "955a",
+      "account_number": "12345678",
       "transaction_id": 1682,
       "date": "2024/12/17",
       "description": "Salary",
       "credit": 10000,
-      "debit": 0,
+      "debit": "",
       "category": "Income"
     },
     {
-      "account_number": 12345678,
+      "id": "3201",
+      "account_number": "12345678",
       "transaction_id": 1538,
       "date": "2024/12/19",
       "description": "Netflix",
-      "credit": 0,
+      "credit": "",
       "debit": 25,
       "category": "Entertainment"
     },
     {
-      "account_number": 15628462,
+      "id": "484d",
+      "account_number": "15628462",
       "transaction_id": 2291,
       "date": "2024/12/22",
       "description": "Walmart",
-      "credit": 0,
+      "credit": "",
       "debit": 120,
       "category": "Grocery"
     },
     {
-      "account_number": 23555647,
+      "id": "8f2c",
+      "account_number": "23555647",
       "transaction_id": 6423,
       "date": "2024/12/31",
       "description": "Apple",
-      "credit": 0,
+      "credit": "",
       "debit": 1200,
       "category": "Shopping"
+    },
+    {
+      "id": "1b0d",
+      "account_number": "23555647",
+      "transaction_id": 5263,
+      "date": "2025/1/6",
+      "description": "Salary",
+      "credit": 10000,
+      "debit": "",
+      "category": "Income"
+    },
+    {
+      "id": "2ba6",
+      "account_number": "15628462",
+      "date": "2025/1/6",
+      "description": "Best Buy",
+      "credit": "",
+      "debit": 250,
+      "category": "Shopping"
+    },
+    {
+      "id": "9c1c",
+      "account_number": "12345678",
+      "date": "2025/1/7",
+      "description": "AMC",
+      "credit": "",
+      "debit": 8,
+      "category": "Entertainment"
     }
   ]
 }
