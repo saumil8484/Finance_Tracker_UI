@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "account_number": 12345678,
+      "transaction_id": 1682,
+      "date": "2024/12/17",
+      "description": "Salary",
+      "credit": 10000,
+      "debit": 0,
+      "category": "Income"
+    },
+    {
+      "account_number": 12345678,
+      "transaction_id": 1538,
+      "date": "2024/12/19",
+      "description": "Netflix",
+      "credit": 0,
+      "debit": 25,
+      "category": "Entertainment"
+    },
+    {
+      "account_number": 15628462,
+      "transaction_id": 2291,
+      "date": "2024/12/22",
+      "description": "Walmart",
+      "credit": 0,
+      "debit": 120,
+      "category": "Grocery"
+    },
+    {
+      "account_number": 23555647,
+      "transaction_id": 6423,
+      "date": "2024/12/31",
+      "description": "Apple",
+      "credit": 0,
+      "debit": 1200,
+      "category": "Shopping"
+    }
+  ]
+}

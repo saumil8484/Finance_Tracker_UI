@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "category": "Entertainment"
+        },
+        {
+            "category": "Grocery"
+        },
+        {
+            "category": "Shopping"
+        },
+        {
+            "category": "Income"
+        },
+        {
+            "category": "Profits"
+        },
+        {
+            "category": "Interest"
+        }
+    ]
+}

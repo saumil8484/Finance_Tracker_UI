@@ -3,14 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
+import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AddTransactionComponent } from './components/add-transaction/add-transaction.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TransactionListComponent,
+    HomeComponent,
+    AddTransactionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

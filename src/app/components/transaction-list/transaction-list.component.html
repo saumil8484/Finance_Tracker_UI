@@ -1,0 +1,32 @@
+<div class="container my-5">
+    <h1 class="mb-3">Transactions</h1>
+
+    <table class="table" *ngIf="transactions && transactions.length > 0" style="text-align: center;">
+        <thead>
+            <tr>
+                <th>Account Number</th>
+                <th>Transaction ID</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Credit</th>
+                <th>Debit</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let transaction of transactions" style="text-align: center;">
+                <td>{{ transaction.account_number }}</td>
+                <td>{{ transaction.transaction_id }}</td>
+                <td>{{ transaction.date }}</td>
+                <td *ngIf="transaction.credit != 0" style="color: green;">{{ transaction.description }}</td>
+                <td *ngIf="transaction.debit != 0" style="color: red;">{{ transaction.description }}</td>
+                <td *ngIf="transaction.credit != 0">${{ transaction.credit }}</td>
+                <td *ngIf="transaction.credit == 0">-</td>
+                <td *ngIf="transaction.debit != 0">${{ transaction.debit }}</td>
+                <td *ngIf="transaction.debit == 0">-</td>
+                <td>{{ transaction.category }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!transactions || transactions.length <= 0">No transactions found !</p>
+</div>
