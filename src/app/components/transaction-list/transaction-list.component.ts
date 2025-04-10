@@ -18,6 +18,7 @@ export class TransactionListComponent implements OnInit {
     this.loadAccountNumber_list();
     this.loadTransactions_list();
     this.visibleTransactions;
+    this.totalVisibleCredits;
   }
 
   loadAccountNumber_list() {
@@ -36,6 +37,7 @@ export class TransactionListComponent implements OnInit {
   onChangeAcc(changedAcc: any){
     this.selectedAcc = changedAcc.target.value;
     this.visibleTransactions;
+    this.totalVisibleCredits;
   }
 
   ClearSearch(){
@@ -48,6 +50,18 @@ export class TransactionListComponent implements OnInit {
   }
 
   get visibleTransactions() {
-    return this.transactions.filter( transactions => transactions.account_number == this.selectedAcc );
+    if (this.selectedAcc == 0) {
+      return this.transactions.filter( transactions => transactions.account_number );
+    } else {
+      return this.transactions.filter( transactions => transactions.account_number == this.selectedAcc ); 
+    }
+  }
+
+  get totalVisibleCredits() {
+    return this.visibleTransactions.reduce((sum, transactions) => sum + Number(transactions.credit), 0);
+  }
+
+  get totalVisibleDebits() {
+    return this.visibleTransactions.reduce((sum, transactions) => sum + Number(transactions.debit), 0);
   }
 }
