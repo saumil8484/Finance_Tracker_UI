@@ -27,7 +27,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let transaction of transactions" style="text-align: center;">
+            <!--<tr *ngFor="let transaction of transactions" style="text-align: center;">
                 <ng-container *ngIf="selectedAcc == 0">
                     <td>...{{ transaction.account_number }}</td>
                     <td>{{ transaction.id }}</td>
@@ -58,6 +58,22 @@
                         <td>{{ transaction.category }}</td>
                     </ng-container>
                 </ng-container>
+            </tr>-->
+            <tr *ngFor="let transaction of visibleTransactions" style="text-align: center;">
+                    <td>...{{ transaction.account_number }}</td>
+                    <td>{{ transaction.id }}</td>
+                    <td>{{ transaction.date }}</td>
+                    <td *ngIf="transaction.credit != 0" style="color: green;">{{ transaction.description }}</td>
+                    <td *ngIf="transaction.debit != 0" style="color: red;">{{ transaction.description }}</td>
+                    <td *ngIf="transaction.credit != 0">${{ transaction.credit }}</td>
+                    <td *ngIf="transaction.credit == 0"></td>
+                    <td *ngIf="transaction.debit != 0">-${{ transaction.debit }}</td>
+                    <td *ngIf="transaction.debit == 0"></td>
+                    <td>{{ transaction.category }}</td>
+                    <td>
+                        <button type="button"><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button type="button"><i class="fa-solid fa-trash"></i></button>
+                    </td>
             </tr>
             <tr>
                 <th></th>

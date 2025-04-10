@@ -17,6 +17,7 @@ export class TransactionListComponent implements OnInit {
   ngOnInit(): void {
     this.loadAccountNumber_list();
     this.loadTransactions_list();
+    this.visibleTransactions;
   }
 
   loadAccountNumber_list() {
@@ -34,6 +35,7 @@ export class TransactionListComponent implements OnInit {
   selectedAcc = 0;
   onChangeAcc(changedAcc: any){
     this.selectedAcc = changedAcc.target.value;
+    this.visibleTransactions;
   }
 
   ClearSearch(){
@@ -43,5 +45,9 @@ export class TransactionListComponent implements OnInit {
 
   onAdd(){
     this.router.navigate(['addTransactions']);
+  }
+
+  get visibleTransactions() {
+    return this.transactions.filter( transactions => transactions.account_number == this.selectedAcc );
   }
 }
