@@ -48,10 +48,11 @@
                 <th></th>
                 <th></th>
                 <th>Total :</th>
-                <th>{{ totalVisibleCredits }}</th>
-                <th>- $1000</th>
-                <th>=&nbsp;&nbsp;&nbsp;</th>
-                <th>$19000</th>
+                <th>${{ totalVisibleCredits }}</th>
+                <th>-&nbsp;${{ totalVisibleDebits }}</th>
+                <th *ngIf="visibleTotal > 0" style="color: green;">=&nbsp;${{ visibleTotal }}</th>
+                <th *ngIf="visibleTotal <= 0" style="color: red;">=&nbsp;${{ visibleTotal }}</th>
+                <th></th>
             </tr>
         </tbody>
     </table>

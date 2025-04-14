@@ -19,6 +19,8 @@ export class TransactionListComponent implements OnInit {
     this.loadTransactions_list();
     this.visibleTransactions;
     this.totalVisibleCredits;
+    this.totalVisibleDebits;
+    this.visibleTotal;
   }
 
   loadAccountNumber_list() {
@@ -38,6 +40,8 @@ export class TransactionListComponent implements OnInit {
     this.selectedAcc = changedAcc.target.value;
     this.visibleTransactions;
     this.totalVisibleCredits;
+    this.totalVisibleDebits;
+    this.visibleTotal;
   }
 
   ClearSearch(){
@@ -63,5 +67,9 @@ export class TransactionListComponent implements OnInit {
 
   get totalVisibleDebits() {
     return this.visibleTransactions.reduce((sum, transactions) => sum + Number(transactions.debit), 0);
+  }
+
+  get visibleTotal(){
+    return this.totalVisibleCredits-this.totalVisibleDebits
   }
 }
