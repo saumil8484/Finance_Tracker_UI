@@ -15,11 +15,11 @@ const routes: Routes = [
     component: TransactionListComponent
   },
   {
-    path: 'addTransactions',
+    path: 'transactions/add',
     component: AddTransactionComponent
   },
   {
-    path: 'editTransactions',
+    path: 'transactions/edit/:id',
     component: EditTransactionComponent
   }
 ];

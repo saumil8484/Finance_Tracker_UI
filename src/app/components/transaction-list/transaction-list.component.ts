@@ -49,10 +49,6 @@ export class TransactionListComponent implements OnInit {
     this.selectedAcc = 0;
   }
 
-  onAdd(){
-    this.router.navigate(['addTransactions']);
-  }
-
   get visibleTransactions() {
     if (this.selectedAcc == 0) {
       return this.transactions.filter( transactions => transactions.account_number );

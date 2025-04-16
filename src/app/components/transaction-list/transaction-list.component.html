@@ -9,7 +9,7 @@
         <button type="button" class="btn btn-warning btn-sm mr-5" (click)="ClearSearch()">Clear</button>
     </div>
     <div style="float: right;">
-        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-sm mb-1" (click)="onAdd()">Add Transaction</button>
+        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-sm mb-1" routerLink="/transactions/add">Add Transaction</button>
     </div>
 
 
@@ -39,7 +39,7 @@
                 <td *ngIf="transaction.debit == 0"></td>
                 <td>{{ transaction.category }}</td>
                 <td>
-                    <button type="button"><i class="fa-regular fa-pen-to-square"></i></button>
+                    <button type="button" [routerLink]="['/transactions', 'edit', transaction.id]"><i class="fa-regular fa-pen-to-square"></i></button>
                     <button type="button"><i class="fa-solid fa-trash"></i></button>
                 </td>
             </tr>
