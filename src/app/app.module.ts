@@ -8,13 +8,15 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddTransactionComponent } from './components/add-transaction/add-transaction.component';
 import { FormsModule } from '@angular/forms';
+import { EditTransactionComponent } from './edit-transaction/edit-transaction.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TransactionListComponent,
     HomeComponent,
-    AddTransactionComponent
+    AddTransactionComponent,
+    EditTransactionComponent
   ],
   imports: [
     BrowserModule,
