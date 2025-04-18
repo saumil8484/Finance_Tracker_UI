@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { ActivatedRoute,Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -20,9 +20,17 @@ export class EditTransactionComponent implements OnInit {
     "category": ""
   };
   
-  constructor( private http: HttpClient, private router: Router ) { }
+  constructor( private route: ActivatedRoute, private http: HttpClient, private router: Router ) { }
 
+  
   ngOnInit(): void {
+    this.route.paramMap.subscribe({
+      next: (params) => {
+        const id = params.get('id');
+        console.log(id);
+      }
+    })
+    
     this.loadAccountNumber_list();
     this.loadCategory_list();
   }
