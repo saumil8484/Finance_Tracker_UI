@@ -68,4 +68,13 @@ export class TransactionListComponent implements OnInit {
   get visibleTotal(){
     return this.totalVisibleCredits-this.totalVisibleDebits
   }
+
+  onDeleteTrans(id: any) {
+    const url = `http://localhost:3000/data/${id}`;
+
+    this.http.delete(url).subscribe((res:any)=>{
+      alert("Transaction details deleted successfully !");
+      this.ngOnInit;
+    })
+  }
 }

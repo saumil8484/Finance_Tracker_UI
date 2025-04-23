@@ -40,7 +40,7 @@
                 <td>{{ transaction.category }}</td>
                 <td>
                     <button type="button" [routerLink]="['/transactions', 'edit', transaction.id]"><i class="fa-regular fa-pen-to-square"></i></button>
-                    <button type="button"><i class="fa-solid fa-trash"></i></button>
+                    <button type="button"><i class="fa-solid fa-trash" (click)="onDeleteTrans(transaction.id)"></i></button>
                 </td>
             </tr>
             <tr>
