@@ -47,8 +47,8 @@ export class AddTransactionComponent implements OnInit {
 
   onAddTrans() {
     this.http.post("http://localhost:3000/data", this.transactionObject).subscribe((res:any)=>{
-      alert("Transaction details added successfully !");
       this.router.navigate(['transactions']);
+      alert("Transaction details added successfully !");
     })
   }
   onBack(){

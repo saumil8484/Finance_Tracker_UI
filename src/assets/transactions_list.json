@@ -4,7 +4,7 @@
       "id": "955a",
       "account_number": "12345678",
       "transaction_id": 1682,
-      "date": "2024/12/17",
+      "date": "2024-12-17",
       "description": "Salary",
       "credit": 10000,
       "debit": "",
@@ -14,7 +14,7 @@
       "id": "3201",
       "account_number": "12345678",
       "transaction_id": 1538,
-      "date": "2024/12/19",
+      "date": "2024-12-19",
       "description": "Netflix",
       "credit": "",
       "debit": 25,
@@ -24,7 +24,7 @@
       "id": "484d",
       "account_number": "15628462",
       "transaction_id": 2291,
-      "date": "2024/12/22",
+      "date": "2024-12-22",
       "description": "Walmart",
       "credit": "",
       "debit": 120,
@@ -34,7 +34,7 @@
       "id": "8f2c",
       "account_number": "23555647",
       "transaction_id": 6423,
-      "date": "2024/12/31",
+      "date": "2024-12-31",
       "description": "Apple",
       "credit": "",
       "debit": 1200,
@@ -44,7 +44,7 @@
       "id": "1b0d",
       "account_number": "23555647",
       "transaction_id": 5263,
-      "date": "2025/1/6",
+      "date": "2025-01-06",
       "description": "Salary",
       "credit": 10000,
       "debit": "",
@@ -53,7 +53,7 @@
     {
       "id": "2ba6",
       "account_number": "15628462",
-      "date": "2025/1/6",
+      "date": "2025-01-06",
       "description": "Best Buy",
       "credit": "",
       "debit": 250,
@@ -62,20 +62,20 @@
     {
       "id": "9c1c",
       "account_number": "12345678",
-      "date": "2025/1/7",
+      "date": "2025-01-07",
       "description": "AMC",
       "credit": "",
       "debit": 8,
       "category": "Entertainment"
     },
     {
-      "id": "75db",
-      "account_number": "23555647",
-      "date": "2025-04-09",
+      "id": "3878",
+      "account_number": "15628462",
+      "date": "2025-04-22",
       "description": "Walmart",
       "credit": "",
       "debit": 472,
-      "category": "Grocery"
+      "category": "Shopping"
     }
   ]
 }
