@@ -67,15 +67,6 @@
       "credit": "",
       "debit": 8,
       "category": "Entertainment"
-    },
-    {
-      "id": "3878",
-      "account_number": "15628462",
-      "date": "2025-04-22",
-      "description": "Walmart",
-      "credit": "",
-      "debit": 472,
-      "category": "Shopping"
     }
   ]
 }

@@ -73,8 +73,8 @@ export class TransactionListComponent implements OnInit {
     const url = `http://localhost:3000/data/${id}`;
 
     this.http.delete(url).subscribe((res:any)=>{
-      alert("Transaction details deleted successfully !");
-      this.ngOnInit;
+      this.ngOnInit();
     })
+    alert("Transaction details deleted successfully !");
   }
 }
