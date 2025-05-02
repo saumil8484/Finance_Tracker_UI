@@ -11,6 +11,9 @@ export class EditTransactionComponent implements OnInit {
 
   acct_number: any[] = [];
   category_list: any[] = [];
+  transaction_id: any;
+  transactions: any[] = [];
+  selected_transaction: any[] = [];
   transactionObject: any = {
     "account_number": '',
     "date": "",
@@ -27,12 +30,14 @@ export class EditTransactionComponent implements OnInit {
     this.route.paramMap.subscribe({
       next: (params) => {
         const id = params.get('id');
-        console.log(id);
+        this.transaction_id = id;
+        console.log(this.transaction_id);
       }
     })
-    
+    this.loadTransactions_list();
     this.loadAccountNumber_list();
     this.loadCategory_list();
+    this.selected_transactions();
   }
 
   loadAccountNumber_list() {
@@ -45,6 +50,24 @@ export class EditTransactionComponent implements OnInit {
     this.http.get("assets/category.json").subscribe((res:any)=>{
       this.category_list = res.data;
     })
+  }
+
+  loadTransactions_list() {
+    this.http.get("http://localhost:3000/data").subscribe((res:any)=>{
+      this.transactions = res;
+    })
+  }
+
+  selected_transactions() {
+    console.log(this.transactions)
+    for(let element of this.transactions)
+      {
+        /*if(this.transaction_id == element.id)
+        {
+          this.selected_transaction = element.id;
+          console.log(element.credit)
+        }*/
+      }
   }
 
   selectedType = 'Temp';
